@@ -7,7 +7,7 @@ stages:
       name: 'Hosted Ubuntu 22.04'
     steps:
     - task: CmdLine@2
-      displayName: Install newman
+      displayName: Install newman package
       inputs:
         script: 'sudo npm install -g newman'
         workingDirectory: 'starter-code/automatedtesting/postman'
