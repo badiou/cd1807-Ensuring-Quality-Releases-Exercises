@@ -1,6 +1,8 @@
 name: Azure Pipelines
+
 variables:
   python.version: '3.7.6'
+
 stages:
 - stage: Build
   jobs:
@@ -13,9 +15,9 @@ stages:
       inputs:
         script: 'sudo npm install -g newman'
         workingDirectory: $(System.DefaultWorkingDirectory)
+
     - task: CmdLine@2
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: 'newman run starterapis.json'
-        workingDirectory: 'starter-code/automatedtesting/postman'
+        script: 'newman run $(System.DefaultWorkingDirectory)/starter-code/automatedtesting/postman/starterapis.json'
