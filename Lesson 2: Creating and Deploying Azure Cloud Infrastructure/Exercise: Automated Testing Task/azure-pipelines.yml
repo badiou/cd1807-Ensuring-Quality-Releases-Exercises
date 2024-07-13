@@ -17,5 +17,5 @@ stages:
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: 'sudo newman run $(System.DefaultWorkingDirectory)/StarterAPIs.json'
+        script: 'sudo newman run StarterAPIs.json'
         workingDirectory: 'starter-code/automatedtesting/postman'
