@@ -10,14 +10,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: CmdLine@2
-      displayName: Install Newman
-      inputs:
-        script: 'sudo npm install -g newman'
-        workingDirectory: $(System.DefaultWorkingDirectory)
+    - script: 'sudo npm install -g newman'
+      displayName: 'Install Newman'
+      
+    - script: 'ls -R $(System.DefaultWorkingDirectory)'
+      displayName: 'List files in working directory'
 
-    - task: CmdLine@2
-      displayName: Run Regression Tests
-      continueOnError: true
-      inputs:
-        script: 'newman run $(System.DefaultWorkingDirectory)/starterapis.json'
+    - script: 'newman run $(System.DefaultWorkingDirectory)/starterapis.json'
+      displayName: 'Run Regression Tests'
+      
