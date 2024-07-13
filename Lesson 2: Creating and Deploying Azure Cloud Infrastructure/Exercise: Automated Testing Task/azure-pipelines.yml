@@ -16,6 +16,6 @@ stages:
     - script: 'ls -R $(System.DefaultWorkingDirectory)'
       displayName: 'List files in working directory'
 
-    - script: 'newman run $(System.DefaultWorkingDirectory)/starterapis.json'
+    - script: 'sudo newman run $(System.DefaultWorkingDirectory)/starterapis.json'
       displayName: 'Run Regression Tests'
       
