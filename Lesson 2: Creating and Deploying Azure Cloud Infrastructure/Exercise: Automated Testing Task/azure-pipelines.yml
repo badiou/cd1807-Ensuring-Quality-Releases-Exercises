@@ -4,7 +4,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      name: Hosted Ubuntu 22
+      name: 'Hosted Ubuntu 20.04'
     steps:
     - task: CmdLine@2
       displayName: Install newman
