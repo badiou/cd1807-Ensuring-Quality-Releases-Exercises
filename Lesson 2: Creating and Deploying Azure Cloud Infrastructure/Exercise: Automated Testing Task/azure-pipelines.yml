@@ -20,4 +20,4 @@ stages:
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: 'newman run $(System.DefaultWorkingDirectory)/starter-code/automatedtesting/postman/starterapis.json'
+        script: 'newman run $(System.DefaultWorkingDirectory)/starterapis.json'
