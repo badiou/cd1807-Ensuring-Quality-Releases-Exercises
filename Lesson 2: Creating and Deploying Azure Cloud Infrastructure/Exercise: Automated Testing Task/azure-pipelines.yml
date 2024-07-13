@@ -4,18 +4,16 @@ stages:
   jobs:
   - job: Build
     pool:
-      name: 'Hosted Ubuntu@latest'
+      name: 'Hosted Ubuntu 1604'  # Corrected agent pool name
     steps:
     - task: CmdLine@2
-      displayName: Install newman package
+      displayName: Install newman
       inputs:
         script: 'sudo npm install -g newman'
         workingDirectory: 'starter-code/automatedtesting/postman'
     - task: CmdLine@2
-      displayName: Reun newman test
+      displayName: Run newman test
       continueOnError: true
       inputs:
-        script: 'newman run json StarterAPIs.json'
+        script: 'newman run StarterAPIs.json'
         workingDirectory: 'starter-code/automatedtesting/postman'
-    
-    
